@@ -48,18 +48,6 @@ public class ContratServiceImpl implements IContratService {
 		return null;
 	}
 
-	@Override
-	public Contrat ajoutContrat(Contrat contrat) {
-		try {
-			l.info(" loading save contrat");
-			Contrat c = contratRepository.save(contrat);
-			l.info(" Successful saving contrat");
-			return c;
-		} catch (Exception e) {
-			l.error("saving not completed !!!!");
-		}
-		return null;
-	}
 
 	@Transactional
 	public void deleteContratByRef(int contratRef) {
@@ -99,9 +87,9 @@ public class ContratServiceImpl implements IContratService {
 	@Override
 	public Contrat updateContrat(Contrat contrat) {
 		try {
-			l.info(" loading update contrat");
+			l.info(" loading update contrat" + contrat.getSalaire());
 			Contrat c = contratRepository.save(contrat);
-			l.info(" Successful update employe");
+			l.info(" Successful update contrat");
 			return c;
 		} catch (Exception e) {
 			l.error("update not completed !!!!");

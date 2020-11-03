@@ -32,7 +32,7 @@ public class ContratServiceImplTest {
 
 		String sDate1 = "31/12/1998";
 		Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-		Contrat c = new Contrat(date1, "MENSUEL", 999);
+		Contrat c = new Contrat(date1, "MENSUEL", 1999);
 
 		Contrat co = ics.ajouterContrat(c);
 
@@ -42,8 +42,8 @@ public class ContratServiceImplTest {
 
 	@Test
 	public void testUpdateContrat() {
-		Contrat c = ics.getContratByRef(1);
-		c.setSalaire(200);
+		Contrat c = ics.getContratByRef(2);
+		c.setSalaire(1200);
 		Contrat co = ics.updateContrat(c);
 		assertEquals(co.getReference(), c.getReference());
 	}

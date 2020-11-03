@@ -8,8 +8,6 @@ public interface IContratService {
 
 	Contrat ajouterContrat(Contrat contrat);
 
-	Contrat ajoutContrat(Contrat contrat);
-
 	Contrat getContratByRef(int contratRef);
 
 	void affecterContratAEmploye(int contratId, int employeId);
